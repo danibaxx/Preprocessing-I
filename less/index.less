@@ -69,16 +69,10 @@ html, body {
 	}
 }
 
-a {
-	padding: 0 3%;
-	font-size: 1.5rem;
-	// border: 1px solid green;
-	font-family: @styled-font;
-}
+// Variables and Mixins
 
 @nav-color: whitesmoke;
 @styled-font: 'Open Sans Condensed', sans-serif;
-
 
 .fonts {
 	text-decoration: none;
@@ -87,6 +81,26 @@ a {
 	border-radius: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+a {
+	padding: 0 3%;
+	font-size: 1.5rem;
+	font-family: @styled-font;
+	
+}
+
+p {
+	font-family: @styled-font;
+}
+
+header nav {
+	display: flex;
+	justify-content: flex-end;
+	background: darkslateblue;
+	height: 50px;
+	width: 100%;
+	padding: 5px 5px 5px 0;
 }
 
 a:link {
@@ -105,17 +119,6 @@ a:hover {
 	.fonts;
 }
 
-
-header nav {
-	display: flex;
-	justify-content: flex-end;
-	background: darkslateblue;
-	height: 50px;
-	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
 img {
 	width: 100%;
 	border-radius: 15px;
@@ -123,6 +126,7 @@ img {
 
 }
 
+// Mixins
 .container-style {
 	display: flex;
 	flex-wrap: nowrap;
@@ -145,12 +149,13 @@ img {
 
 	.intro {
 		font-family: @styled-font;
-		margin: 45px 0;
+		padding: 35px 5px 35px;
 	}
 
 	h1 {
 		font-size: 4.8rem;
 		color: whitesmoke;
+		font-family: @styled-font;
 	}
 
 	div p {
@@ -166,7 +171,7 @@ img {
 
 .border-top {
 	border-top: 2px solid black;
-	padding-top: 25px;
+	padding: 25px 10px 35px 10px;
 }
 
 .h2-style {
@@ -193,19 +198,20 @@ img {
 		.flexbox-box;
 	}
 
-	ul {
-		list-style-type: square;
-		padding: 0 25px;
-		line-height: 2.1;
-		font-size: 1.3rem;
-		border: 3px dashed midnightblue;
-	}
-
 	p {
 		font-size: 1.3rem;
 		line-height: 1.4;
 		margin: 0 5px 0 0;
 	}
+}
+
+ul {
+	list-style-type: square;
+	padding: 0 25px;
+	line-height: 2.1;
+	font-size: 1.3rem;
+	border: 3px dashed midnightblue;
+	font-family: @styled-font;
 }
 
 .bottom-container {
