@@ -55,6 +55,94 @@ table {
 
 html, body {
 	height: 100%;
-	background: lightseagreen;
 }
 
+.container {
+	width: 1100px;
+	margin: auto;
+
+	@media(max-width:500px) {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		min-width: 500px;
+	}
+}
+
+a {
+	padding: 0 3%;
+	font-size: 1.5rem;
+	// border: 1px solid green;
+	font-family: @styled-font;
+}
+
+@nav-color: whitesmoke;
+@styled-font: 'Open Sans Condensed', sans-serif;
+
+
+.fonts {
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+a:link {
+	color: @nav-color;
+	.fonts;	
+}
+
+a:visited {
+	color: @nav-color;
+	.fonts;
+}
+
+a:hover {
+	background: mediumslateblue;
+	color: @nav-color;
+	.fonts;
+}
+
+
+header nav {
+	display: flex;
+	justify-content: flex-end;
+	background: darkslateblue;
+	height: 50px;
+	width: 100%;
+}
+
+img {
+	width: 100%;
+	border-radius: 15px;
+	margin: auto 0;
+}
+
+.top-container {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.intro {
+	font-family: @styled-font;
+}
+
+h1 {
+	font-size: 4.8rem;
+}
+
+div .intro p {
+	font-size: 1.6rem;
+	padding: 15px 5px;
+}
+
+button {
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	width: 35%;
+	height: 40px;
+}
