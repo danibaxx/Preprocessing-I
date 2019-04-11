@@ -54,6 +54,249 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+.container {
+	width: 1100px;
+	margin: auto;
+
+	@media(max-width:500px) {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+		align-content: center;
+	}
+}
+
+head {
+	@media(max-width:500px) {
+		min-width: 100%;
+	}
+
+}
+
+
+// Variables and Mixins
+
+@nav-color: whitesmoke;
+@styled-font: 'Open Sans Condensed', sans-serif;
+
+.fonts {
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+a {
+	padding: 0 3%;
+	font-size: 1.5rem;
+	font-family: @styled-font;
+	
+}
+
+p {
+	font-family: @styled-font;
+}
+
+header nav {
+	display: flex;
+	justify-content: flex-end;
+	background: darkslateblue;
+	height: 50px;
+	width: 100%;
+	padding: 5px 5px 5px 0;
+
+	@media(max-width:500px) {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 175px;
+	}
+}
+
+a:link {
+	color: @nav-color;
+	.fonts;	
+}
+
+a:visited {
+	color: @nav-color;
+	.fonts;
+}
+
+a:hover {
+	background: mediumslateblue;
+	color: @nav-color;
+	.fonts;
+}
+
+header nav a {
+	@media(max-width:500px) {
+		width: 100%;
+		font-size: 2rem;
+		border-bottom: 1px solid black;
+	}
+}
+
+img {
+	width: 100%;
+	border-radius: 15px;
+	margin: auto 0;
+
+	@media(max-width:500px) {
+		display: none;
+	}
+}
+
+
+// Mixins
+
+.container-style {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.buttons-design {
+	text-decoration: none;
+	text-align: center;
+	border-radius: 10px;
+	width: 35%;
+	height: 40px;
+	font-size: 1.2rem;	
+	background: mediumslateblue;
+	color: whitesmoke;
+}
+
+
+// Nesting top container
+
+.top-container {
+	.container-style;
+	background-image: linear-gradient(darkslateblue, darkslateblue, whitesmoke);
+
+	.intro {
+		font-family: @styled-font;
+		padding: 35px 5px 35px;
+	}
+
+	h1 {
+		font-size: 4.8rem;
+		color: whitesmoke;
+		font-family: @styled-font;
+	}
+
+	div p {
+		font-size: 1.6rem;
+		padding: 15px 5px;
+		color: whitesmoke;
+	}
+
+	button {
+		.buttons-design;
+	}
+}
+
+.border-top {
+	border-top: 2px solid black;
+	padding: 25px 10px 35px 10px;
+}
+
+// Mixin
+
+.h2-style {
+	font-size: 2rem;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.flexbox-box {
+	width: 100%;
+	height: 325px;
+}
+
+
+// Nesting mid container
+
+.mid-container {
+	.container-style;
+	background: whitesmoke;
+	.border-top;
+
+	div.about-me h2 {
+		.h2-style;
+	}
+
+	.about-me {
+		.flexbox-box;
+	}
+
+	p {
+		font-size: 1.3rem;
+		line-height: 1.4;
+		margin: 0 5px 0 0;
+	}
+
+	@media(max-width:500px) {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
+
+ul {
+	list-style-type: square;
+	padding: 0 25px;
+	line-height: 2.1;
+	font-size: 1.3rem;
+	border: 3px dashed midnightblue;
+	font-family: @styled-font;
+}
+
+
+// bottom container nesting
+
+.bottom-container {
+	display: flex;
+	flex-wrap: wrap;
+	background: whitesmoke;
+	.border-top;
+
+	div.history {
+		.flexbox-box;
+	}
+
+	div h2 {
+		.h2-style;
+	}
+
+	.history p {
+		font-size: 1.4rem;
+	}
+
+	@media(max-width:500px) {
+		min-width: 90%;
+	}
+}
+
+
+// Footer
+
+footer {
+	padding: 30px 0;
+	font-size: 1rem;
+	text-align: center;
+	background-image: linear-gradient(whitesmoke, darkslateblue) ;
+	color: black;
+
+	@media(max-width:500px) {
+		text-align: center;
+	}
+}
